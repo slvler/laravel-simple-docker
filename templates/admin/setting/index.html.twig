@@ -23,20 +23,34 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Reason</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="tag tag-success">Approved</span></td>
-                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                        </tr>
+
+                        {% for setting in settings %}
+                                <tr>
+                                    <td>183</td>
+                                    <td>{{ setting.title }}</td>
+                                    <td>{{ setting.description }}</td>
+                                    <td><span class="tag tag-success">Approved</span></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <div class="btn-group"><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <i>İşlemler</i>
+                                                </button>
+                                                <div class="dropdown-menu" style="">
+                                                    <a class="dropdown-item" href="{{ path('admin.setting.detail', {id: setting.id} ) }}">Detay</a>
+                                                    <a class="dropdown-item" href="#">Sil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                        {% endfor %}
+
                         </tbody>
                     </table>
                 </div>

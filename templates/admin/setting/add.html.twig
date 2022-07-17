@@ -1,0 +1,26 @@
+{% extends 'admin/main.html.twig' %}
+
+{% block title %} Ayarlar Düzenleme Bölümü {% endblock %}
+
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Ayarlar Bölümü Düzenleme</h3>
+                </div>
+
+                {{ form_start(form) }}
+                    <div class="card-body">
+                        {{ form_row(form.title) }}
+                        {{ form_row(form.description) }}
+                    </div>
+                {{ form_rest(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

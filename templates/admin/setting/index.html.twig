@@ -12,9 +12,8 @@
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm" >
-                                <button class="btn btn-primary">Ayar Oluştur</button>
+                           <a href="{{ path('admin.setting.add') }}"><button class="btn btn-primary">Ayar Oluştur</button></a>
                         </div>
-
                     </div>
                 </div>
                 <!-- /.card-header -->
@@ -33,7 +32,7 @@
 
                         {% for setting in settings %}
                                 <tr>
-                                    <td>183</td>
+                                    <td>{{ setting.id }}</td>
                                     <td>{{ setting.title }}</td>
                                     <td>{{ setting.description }}</td>
                                     <td><span class="tag tag-success">Approved</span></td>
@@ -50,11 +49,30 @@
                                     </td>
                                 </tr>
                         {% endfor %}
-
                         </tbody>
                     </table>
                 </div>
                 <!-- /.card-body -->
+
+                {% if isPagination is defined and isPagination %}
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+
+                                {% if page != 1 %}
+                                    <li class="page-item"><a class="page-link" href="{{ path('admin.setting.alls', {page: page - 1, limit: limit} ) }}">«</a></li>
+                                {% endif %}
+
+                                {%  for i in range(1, nbrePage) %}
+                                    <li class="page-item"><a class="page-link" href="{{ path('admin.setting.alls', {page:i, limit: limit} ) }}">{{ i }}</a></li>
+                                {% endfor %}
+
+
+                                {% if page != nbrePage %}
+                                    <li class="page-item"><a class="page-link" href="{{ path('admin.setting.alls', {page: page + 1, limit: limit} ) }}">»</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                {% endif %}
             </div>
             <!-- /.card -->
         </div>

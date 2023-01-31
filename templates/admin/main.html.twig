@@ -39,8 +39,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Ayarlar</a>
                 <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                     <li><a href="{{ path('admin.setting') }}" class="dropdown-item">Genel Ayarlar </a></li>
-
                 </ul>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ "/logout" }}" class="nav-link">Çıkış Yap</a>
             </li>
         </ul>
 

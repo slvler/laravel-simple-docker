@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Log in</title>
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form_row(registrationForm.agreeTerms) }}
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block">Kayıt Ol</button>
+                        </div>
+                    </div>
+                {{ form_end(registrationForm) }}
+        </div>
+    </div>
+</div>
+<script src="{{  asset('assets/admin/js/jquery.min.js') }}"></script>
+<script src="{{  asset('assets/admin/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/adminlte.min.js') }}"></script>
+</body>
+</html>

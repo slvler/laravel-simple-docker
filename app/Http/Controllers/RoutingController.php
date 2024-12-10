@@ -22,6 +22,7 @@ class RoutingController extends Controller
                 DB::raw("(6371 * ACOS(COS(RADIANS($latitude)) * COS(RADIANS(latitude)) * COS(RADIANS(longitude) - RADIANS($longitude)) + SIN(RADIANS($latitude)) * SIN(RADIANS(latitude)))) AS distance"))
             ->orderBy('distance', 'asc')
             ->get();
+
        return RoutingResource::collection($locations);
     }
 }

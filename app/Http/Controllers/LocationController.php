@@ -52,7 +52,8 @@ class LocationController extends Controller
     public function delete(Location $location)
     {
         try {
-            $location->delete();
+            $this->locationService->delete($location);
+
             return response()->json([
                 'success' => true,
                 'message' => "successful",

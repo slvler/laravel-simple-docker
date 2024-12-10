@@ -55,7 +55,7 @@ class LocationController extends Controller
             $location->delete();
             return response()->json([
                 'success' => true,
-                'message' => "success",
+                'message' => "successful",
             ]);
         }catch (\Throwable $throwable){
             return response()->json([

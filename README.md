@@ -5,6 +5,8 @@
 ## Installation
 ```bash
 docker compose up -d --build
+docker compose exec app bash
+chmod -R 777 /app/storage/ /app/bootstrap/
 composer install
 docker compose exec app php artisan key:generate
 docker compose exec app php artisan jwt:secret
